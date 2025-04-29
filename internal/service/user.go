@@ -24,6 +24,7 @@ func (us *userService) Index(ctx context.Context) ([]dto.UserData, error) {
 			Name:     v.Name,
 			Email:    v.Email,
 			Password: v.Password,
+			GoogleID: v.GoogleID,
 		})
 	}
 
