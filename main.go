@@ -6,7 +6,7 @@ import (
 	"github.com/mdwiastika/the-cows-reog-fiber/internal/config"
 	"github.com/mdwiastika/the-cows-reog-fiber/internal/connection"
 	"github.com/mdwiastika/the-cows-reog-fiber/internal/repository"
-	"github.com/mdwiastika/the-cows-reog-fiber/internal/service"
+	"github.com/mdwiastika/the-cows-reog-fiber/internal/services"
 )
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 	app := fiber.New()
 
 	userRepository := repository.NewUser(dbConnection)
-	userService := service.NewUser(userRepository)
+	userService := services.NewUser(userRepository)
 
 	api.NewUser(app, userService)
 
